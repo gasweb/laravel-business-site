@@ -17,6 +17,32 @@
                     You are logged in!
                 </div>
             </div>
+            <div>
+
+                @if(count($listings))
+                    <h3>Your listings</h3>
+                    <table class="table table-striped">
+                        <tr>
+                            <th>Name</th>
+                            <th>Address</th>
+                            <th>Website</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Bio</th>
+                        </tr>
+                        @foreach($listings as $listing)
+                            <tr>
+                                <td>{{ $listing->name }}</td>
+                                <td>{{ $listing->address }}</td>
+                                <td>{{ $listing->website }}</td>
+                                <td>{{ $listing->email }}</td>
+                                <td>{{ $listing->phone }}</td>
+                                <td>{{ $listing->bio }}</td>
+                            </tr>
+                        @endforeach
+                    </table>
+                @endif
+            </div>
         </div>
     </div>
 </div>
